@@ -16,7 +16,7 @@
 	提示：
 	1 <= s.length <= 1000
 	s 仅由数字和英文字母（大写和/或小写）组成*/
-class Solution {
+public class 最长回文子串 {
 	//index: 记录回文串第一个字符的位置
 	//len: 记录回文串的长度
     private int index, len;
