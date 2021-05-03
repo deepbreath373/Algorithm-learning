@@ -19,6 +19,26 @@ public class 替换空格 {
         return str.toString().replace(" ","%20");
     }
 
+    public static String replaceSpace3(String s){
+        if(s == null){
+            return "";
+        }
+        if(s.length() == 0){
+            return "";
+        }
+        StringBuffer sb = new StringBuffer();
+        char[] chars = s.toCharArray();
+        int length = chars.length;
+        for (int i = 0; i < length; i++) {
+            if(chars[i] == ' '){
+                sb.append("%20");
+            }else{
+                sb.append(chars[i]);
+            }
+        }
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
         String str = "we are happy";
         StringBuffer stringBuffer = new StringBuffer();
