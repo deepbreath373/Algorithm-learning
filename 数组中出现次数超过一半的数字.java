@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class 数组中出现次数超过一半的数字 {
     public int majorityElement(int[] nums) {
@@ -50,5 +52,14 @@ public class 数组中出现次数超过一半的数字 {
             }
         }
         return result;
+    }
+
+    public int majorityElement4(int[] nums){
+        Map<Integer,Integer> map = new HashMap<>();
+        for (int num : nums) {
+            map.put(num,map.getOrDefault(num,0)+1);
+            if(map.get(num)>nums.length>>1) return num;
+        }
+        return 0;
     }
 }
