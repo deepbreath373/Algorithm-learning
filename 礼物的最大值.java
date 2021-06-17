@@ -26,6 +26,26 @@ public class 礼物的最大值 {
         return dp[x - 1][y - 1];
     }
 
+    public int maxValue1(int[][] grid) {
+        int x = grid.length;
+        int y = grid[0].length;
+        int[] dp = new int[y];
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < y; j++) {
+                int left = 0;
+                int up = 0;
+                if (i > 0) {
+                    up = dp[j];
+                }
+                if (j > 0) {
+                    left = dp[j - 1];
+                }
+                dp[j] = Math.max(up, left) + grid[i][j];
+            }
+        }
+        return dp[y - 1];
+    }
+
     public int maxValue2(int[][] grid) {
         int x = grid.length;
         int y = grid[0].length;
