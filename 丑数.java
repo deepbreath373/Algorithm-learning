@@ -14,7 +14,9 @@ public class 丑数 {
         dp[0] = 1;
         for (int i = 1; i < n; i++) {
             int n2 = dp[a] * 2, n3 = dp[b] * 3, n5 = dp[c] * 5;
+            //选择最小的符合（比当前已选丑数大）的丑数
             dp[i] = Math.min(Math.min(n2, n3), n5);
+            //如果该丑数被选，那么让相应指针移动一位
             if (dp[i] == n2) {
                 a++;
             }
